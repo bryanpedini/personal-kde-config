@@ -33,7 +33,6 @@ _bash_overrides() {
 
 _cleanup() {
   rm -rf ${THIS}
->>>>>>> master
 }
 
 _main() {
