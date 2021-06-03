@@ -1,0 +1,13 @@
+GIT_FUNCTIONS=true
+
+# Spaced
+#PS1="${LIGHTBLUE}[ ${LIGHTRED}\u ${LIGHTBLUE}@ ${LIGHTBROWN}$(hostname --fqdn) ${LIGHTBLUE}] ${LIGHTPURPLE}( ${GREEN}\w ${LIGHTPURPLE}) "
+# Not spaced
+PS1="${LIGHTBLUE}[${LIGHTRED}\u${LIGHTBLUE}@${LIGHTBROWN}$(hostname --fqdn)${LIGHTBLUE}]${LIGHTPURPLE}(${GREEN}\w${LIGHTPURPLE})"
+
+if [ $GIT_FUNCTIONS ]; then
+  #PS1="$PS1${LIGHTPURPLE}[${LIGHTCYAN}$(__git_prompt)${LIGHTPURPLE}]"
+  PS1="$PS1${LIGHTBROWN}(${LIGHTCYAN}\$(__git_prompt)${LIGHTBROWN}) "
+fi
+
+PS1="$PS1${RED}#${FORMAT_RESET}"
