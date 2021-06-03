@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
 THIS="$(dirname "$(readlink -fm "$0")")"
-SERVER=FALSE
-FORCE=FALSE
-CLEANUP=FALSE
+SERVER=false
+FORCE=false
+CLEANUP=false
 
 _arguments() {
   for PARM in "$@"; do
     if [ "${PARM}" = "--server" ]; then
-      SERVER=TRUE
+      SERVER=true
     elif [ "${PARM}" = "--force" ]; then
-      FORCE=TRUE
+      FORCE=true
     elif [ "${PARM}" = "--cleanup" ]; then
-      CLEANUP=TRUE
+      CLEANUP=true
     elif [ "${PARM}" = "-h" ] || [ "${PARM}" = "--help" ]; then
       _help
       exit 0
@@ -45,7 +45,7 @@ _cleanup() {
 _main() {
   _arguments "$@"
 
-  if [ ! -z "$(grep "#REF:bashrc_overrides:REF" ~/.bashrc)" ] && [ "${FORCE}" = FALSE ]; then
+  if [ ! -z "$(grep "#REF:bashrc_overrides:REF" ~/.bashrc)" ] && [ "${FORCE}" = false ]; then
     echo "bash overrides already in place"
     echo "skipping..."
     echo
@@ -55,11 +55,11 @@ _main() {
     echo
   fi
 
-  if [ "${SERVER}" = FALSE ]; then
+  if [ "${SERVER}" = false ]; then
     sed -i 's/terminal_fancyfying/terminal_fancyfying_server/' ~/.bashrc_overrides/_all
   fi
 
-  if [ "${CLEANUP}" = FALSE ]; then
+  if [ "${CLEANUP}" = false ]; then
     echo "cleaning up..."
     _cleanup
   fi
