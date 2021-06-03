@@ -55,11 +55,11 @@ _main() {
     echo
   fi
 
-  if [ "${SERVER}" = false ]; then
+  if [ "${SERVER}" = true ]; then
     sed -i 's/terminal_fancyfying/terminal_fancyfying_server/' ~/.bashrc_overrides/_all
   fi
 
-  if [ "${CLEANUP}" = false ]; then
+  if [ "${CLEANUP}" = true ]; then
     echo "cleaning up..."
     _cleanup
   fi
