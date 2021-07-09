@@ -1,3 +1,4 @@
 alias pubkey='cat ~/.ssh/id_rsa.pub'
 alias hosts='sudo nano /etc/hosts'
 alias historygrep='history | grep'
+alias newrepo='bash <(curl -s https://get.bjphoster.com/new-git-repo.sh)'
