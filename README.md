@@ -1,4 +1,4 @@
-# personal-kde-config
-Personal KDE and other Linux-related configs to help me succeed in life (or at least simplify it).
+# Personal Linux config
+Personal Linux-related configs to help me succeed in life (or at least simplify it).
 
-Feel free to try this out, or even add "cool stuff" to help each other out!
+Feel free to try or poke around in the source (it's all human-readable bash), or heck even add "cool stuff" to help each other out!
