@@ -1,4 +1,4 @@
-for source in colored_commands convenience_aliases git_functions histcontrol ls_aliases safety_aliases terminal_colors terminal_fancyfying; do
+for source in colored_commands convenience_aliases git_functions histcontrol home_bin_folder ls_aliases safety_aliases terminal_colors terminal_fancyfying; do
   if [ -f ~/.bashrc_overrides/$source ]; then
     . ~/.bashrc_overrides/$source
   fi
