@@ -37,6 +37,9 @@ _help() {
 
 _bash_overrides() {
   cp -r bashrc_overrides ~/.bashrc_overrides
+}
+
+_bashrc_ref() {
   echo "#REF:bashrc_overrides:REF" >> ~/.bashrc
   echo "if [ -f ~/.bashrc_overrides/_all ]; then" >> ~/.bashrc
   echo "  . ~/.bashrc_overrides/_all" >> ~/.bashrc
@@ -50,12 +53,15 @@ _cleanup() {
 _main() {
   _arguments "$@"
 
-  if [ ! -z "$(grep "#REF:bashrc_overrides:REF" ~/.bashrc)" ] && [ "${FORCE}" = false ]; then
+  if [ "${FORCE}" = true ]; then
+    _bash_overrides
+  elif [ ! -z "$(grep "#REF:bashrc_overrides:REF" ~/.bashrc)" ]; then
     echo "bash overrides already in place"
     echo "skipping..."
     echo
   else
     _bash_overrides
+    _bashrc_ref
     echo "bash overrides added"
     echo
   fi
