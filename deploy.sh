@@ -24,9 +24,14 @@ _help() {
   echo "Usage: $(readlink -fm "$0") [-h | --help] [--cleanup]"
   echo
   echo "Options:"
-  echo "  -h | --help : Prints this help message and quits"
-  echo "  --server: Customizes the terminal feel for a server installation"
-  echo "  --cleanup: Removes the source folder after installation"
+  echo "  -h | --help"
+  echo "    Prints this help message and quits"
+  echo "  --force"
+  echo "    Force the reinstallation of the files"
+  echo "  --server"
+  echo "    Customizes the terminal feel for a server installation"
+  echo "  --cleanup"
+  echo "    Removes the source folder after installation"
   echo
 }
 
