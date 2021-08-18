@@ -4,3 +4,4 @@ alias historygrep='history | grep'
 alias newrepo='bash <(curl -s https://get.bjphoster.com/new-git-repo.sh)'
 
 alias sambaserver='docker run -it --rm --network host -p 137:137 -p 138:138 -p 139:139 -p 445:445 -v `pwd`:/share dperson/samba -n -p -s "sambashare;/share;yes;no;no;shareuser" -w "WORKGROUP"'
+alias termbin='nc termbin.com 9999'
